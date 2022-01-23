@@ -1,0 +1,37 @@
+input.onButtonPressed(Button.A, function () {
+    music.stopAllSounds()
+})
+input.onGesture(Gesture.Shake, function () {
+    music.setVolume(64)
+    music.playMelody("A F E F D G E F ", 120)
+})
+input.onButtonPressed(Button.AB, function () {
+    for (let index = 0; index < 2; index++) {
+        Rover.MotorRunDual(200, 200)
+        basic.pause(2000)
+        Rover.MotorStopAll(MotorActions.Stop)
+        Rover.MotorRunDual(50, -50)
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED1), Rover.colors(RoverColors.Red))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED2), Rover.colors(RoverColors.Yellow))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED3), Rover.colors(RoverColors.Green))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED4), Rover.colors(RoverColors.Purple))
+        basic.pause(1000)
+        Rover.MotorStopAll(MotorActions.Stop)
+        Rover.MotorRunDual(200, 200)
+        basic.pause(750)
+        Rover.MotorStopAll(MotorActions.Stop)
+        Rover.MotorRunDual(50, -50)
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED1), Rover.colors(RoverColors.Orange))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED2), Rover.colors(RoverColors.Green))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED3), Rover.colors(RoverColors.Blue))
+        Rover.setRGBLED(Rover.ledIndex(LEDIndex.LED4), Rover.colors(RoverColors.White))
+        basic.pause(1000)
+        Rover.MotorStopAll(MotorActions.Stop)
+    }
+    music.stopAllSounds()
+    Rover.setBrightness(0)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showString("Philipp")
+})
+basic.showString("WHR 8e")
